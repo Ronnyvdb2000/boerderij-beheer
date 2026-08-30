@@ -1,0 +1,244 @@
+/* ====== Algemene layout ====== */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* ====== Formulieren ====== */
+
+form {
+    max-width: 400px;
+    margin: 0 auto 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #0078ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #005fcc;
+}
+
+/* ====== Resultaten / meldingen ====== */
+
+#result,
+#proposal-result,
+#final-result {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 15px;
+    color: #444;
+}
+
+/* ====== Tabellen (historiek) ====== */
+
+table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+th {
+    background: #0078ff;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background: #f2f7ff;
+}
+
+tr:hover {
+    background: #e8f0ff;
+}
+
+/* ====== Responsive ====== */
+
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+    }
+
+    table {
+        width: 100%;
+    }
+}
+
+/* ====== Extra stijl voor boerderijbeheer (dashboard + generieke tabelweergave) ====== */
+
+.categorie-blok {
+    max-width: 700px;
+    margin: 0 auto 25px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.categorie-blok h2 {
+    margin-top: 0;
+    color: #0078ff;
+}
+
+.tabel-lijst {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tabel-lijst a {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #f1f5f9;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.tabel-lijst a:hover {
+    background: #dbeafe;
+}
+
+.werkbalk {
+    max-width: 95%;
+    margin: 0 auto 15px auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.werkbalk input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.werkbalk button {
+    width: auto;
+    margin-top: 0;
+    padding: 8px 16px;
+}
+
+.data-tabel-wrapper {
+    max-width: 98%;
+    margin: 0 auto;
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.data-tabel-wrapper table {
+    width: max-content;
+    min-width: 100%;
+    box-shadow: none;
+}
+
+.data-tabel-wrapper th, .data-tabel-wrapper td {
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.data-tabel-wrapper input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px;
+    font-size: 13px;
+}
+
+.actie-btn {
+    width: auto;
+    margin: 0 3px 0 0;
+    padding: 4px 10px;
+    font-size: 12px;
+}
+
+.actie-btn.verwijder {
+    background: #dc2626;
+}
+.actie-btn.verwijder:hover {
+    background: #b91c1c;
+}
+
+.actie-btn.opslaan {
+    background: #16a34a;
+}
+.actie-btn.opslaan:hover {
+    background: #15803d;
+}
+
+.paginering {
+    max-width: 95%;
+    margin: 15px auto;
+    text-align: center;
+}
+
+.paginering button {
+    width: auto;
+    padding: 6px 14px;
+    margin: 0 5px;
+}
+
+.terug-link {
+    display: block;
+    max-width: 95%;
+    margin: 0 auto 15px auto;
+    color: #0078ff;
+    text-decoration: none;
+}

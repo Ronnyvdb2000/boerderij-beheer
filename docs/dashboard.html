@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Boerderijbeheer - Overzicht</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Boerderijbeheer</h1>
+  <div id="categorieen"></div>
+
+  <script src="js/api.js"></script>
+  <script>
+    vereistLogin();
+
+    (async () => {
+      const container = document.getElementById('categorieen');
+      try {
+        const tabellen = await apiGet('/tables');
+
+        const perCategorie = {};
+        tabellen.forEach(t => {
+          if (!perCategorie[t.categorie]) perCategorie[t.categorie] = [];
+          perCategorie[t.categorie].push(t.name);
+        });
+
+        // Vaste volgorde: Handel eerst, dan de mestbank-gerelateerde categorieën.
+        const volgorde = ['Handel & facturatie', 'Mestbank transport', 'Mestbank & voeder'];
+        volgorde.forEach(cat => {
+          if (!perCategorie[cat]) return;
+          const blok = document.createElement('div');
+          blok.className = 'categorie-blok';
+          const titel = document.createElement('h2');
+          titel.textContent = `${cat} (${perCategorie[cat].length})`;
+          blok.appendChild(titel);
+
+          const lijst = document.createElement('div');
+          lijst.className = 'tabel-lijst';
+          perCategorie[cat].sort().forEach(naam => {
+            const link = document.createElement('a');
+            link.href = `tabel.html?naam=${encodeURIComponent(naam)}`;
+            link.textContent = naam;
+            lijst.appendChild(link);
+          });
+          blok.appendChild(lijst);
+          container.appendChild(blok);
+        });
+      } catch (err) {
+        container.textContent = 'Fout bij laden van de tabellenlijst: ' + err.message;
+      }
+    })();
+  </script>
+</body>
+</html>

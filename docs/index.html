@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Boerderijbeheer - Login</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Boerderijbeheer</h1>
+
+  <form id="login-form">
+    <label>Gebruikersnaam</label>
+    <input type="text" id="username" required>
+
+    <label>Wachtwoord</label>
+    <input type="password" id="password" required>
+
+    <button type="submit">Login</button>
+    <p id="error-msg" style="color:red; display:none;">Foutieve gebruikersnaam of wachtwoord</p>
+  </form>
+
+  <script src="js/api.js"></script>
+  <script>
+    if (localStorage.getItem('loggedIn') === 'true') {
+      window.location.href = 'dashboard.html';
+    }
+
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      try {
+        const result = await apiPost('/login', { username, password });
+        if (result.success) {
+          localStorage.setItem('loggedIn', 'true');
+          window.location.href = 'dashboard.html';
+        } else {
+          document.getElementById('error-msg').style.display = 'block';
+        }
+      } catch (err) {
+        document.getElementById('error-msg').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
