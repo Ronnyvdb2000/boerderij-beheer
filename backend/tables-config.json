@@ -1,0 +1,8789 @@
+[
+  {
+    "name": "13 voederlijst",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "13 voeders degrave",
+    "columns": [
+      {
+        "name": "levering_id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": false
+      },
+      {
+        "name": "diercode",
+        "type": "INTEGER",
+        "nullable": false
+      },
+      {
+        "name": "leverdatum",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": false
+      },
+      {
+        "name": "artnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "hoev",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "re",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "p",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "tot_re",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "tot_p",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "oorsprcode",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "oorsprklnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "gemed",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "voorschrift",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "molentje",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "iddier",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "codep",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "coden",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "codepn",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "coppens",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "proplume",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "levering_id",
+      "klantnr",
+      "diercode",
+      "leverdatum"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "14 voeders",
+    "columns": [
+      {
+        "name": "bedrijfsvoeder_id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "diercode",
+        "type": "SMALLINT",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "hoev",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "re",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "p",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "bedrijfseigen",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "bedrijfsvoeder_id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "14 voeders tsst",
+    "columns": [
+      {
+        "name": "bedrijfsvoeder_id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "diercode",
+        "type": "SMALLINT",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "hoev",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "re",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "p",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "row_id",
+        "type": "SERIAL",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "row_id"
+    ],
+    "syntheticPk": true,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "15 kunstmest",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": false
+      },
+      {
+        "name": "jaartal",
+        "type": "INTEGER",
+        "nullable": false
+      },
+      {
+        "name": "kunstmest",
+        "type": "INTEGER",
+        "nullable": false
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "hoev",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "p2o5",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ingave",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id",
+      "klantnr",
+      "jaartal",
+      "kunstmest"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "15 tr",
+    "columns": [
+      {
+        "name": "docnr",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "datum",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "mest",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "p2o5",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "vorm",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "aanbieder",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "afnemer",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "type",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "richting",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "row_id",
+        "type": "SERIAL",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "row_id"
+    ],
+    "syntheticPk": true,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "67 regios",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "regio",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "69 teelten",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "teelt",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "70 sanitaire afwijking redenen",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "reden sanitel afwijking",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "00",
+    "columns": [
+      {
+        "name": "adres_id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "tot",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "prefix",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "aanspreking",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "adres1",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "adres2",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "postnr",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "gemeente_id",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "telefoon",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "gsm",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "faxnummer",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "btw",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "klant",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "beginkl",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "expobe",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "expofr",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "premies",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "mestbank",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "mb",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "granen",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "email",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "vl",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "reknr",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "vertegenw",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "test",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "bestaat1",
+        "type": "BOOLEAN",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "adres_id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "00 adresessen",
+    "columns": [
+      {
+        "name": "adres_id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "tot",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "prefix",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "aanspreking",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "adres1",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "adres2",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "postnr",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "gemeente_id",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "telefoon",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "gsm",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "faxnummer",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "btw",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "klant",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "beginkl",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "expobe",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "expofr",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "premies",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "mestbank",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "mb",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "granen",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "email",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "vl",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "reknr",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "vertegenw",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "test",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "bestaat1",
+        "type": "BOOLEAN",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "adres_id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "00 leveradressen",
+    "columns": [
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "levernr",
+        "type": "INTEGER",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "klantnr",
+      "levernr"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "000 vertegenwoordiger",
+    "columns": [
+      {
+        "name": "vertegenwoordiger",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "volgnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "naam",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "adres1",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "gemeente_id",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "login",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "paswoord",
+        "type": "VARCHAR (8)",
+        "nullable": true
+      },
+      {
+        "name": "alg",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "mb",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "bedrijfsgeg",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "voorschr",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "lev",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "korting",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "voederopv",
+        "type": "BOOLEAN",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "vertegenwoordiger"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "0000",
+    "columns": [
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "eerstevannaam",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "jaartal",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "row_id",
+        "type": "SERIAL",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "row_id"
+    ],
+    "syntheticPk": true,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "001lijst",
+    "columns": [
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "naam",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "jaartal",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "somvanaantal",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "row_id",
+        "type": "SERIAL",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "row_id"
+    ],
+    "syntheticPk": true,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "01 gemeenten",
+    "columns": [
+      {
+        "name": "gemeente_id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "postcode",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "gemeente",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "route",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "verwpl",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "ndruk",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "ndrukvoor1_1_19",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "ndrukvoor1_1_17",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "per1",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "per2",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "per3",
+        "type": "INTEGER",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "gemeente_id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "01 maanden",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "maand",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "02 sanitaire gegevens",
+    "columns": [
+      {
+        "name": "adres_id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "beslagnr",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "beslagcode",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "pasw_abregister",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "login_veeportaal",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "pasw_veeportaal",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "auj_statuut",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "zeugen",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "mestvarkens",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "verkoop biggen",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "aankoop biggen",
+        "type": "BOOLEAN",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "adres_id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "03 mestbank gegevens nutrientenhalte",
+    "columns": [
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": false
+      },
+      {
+        "name": "mestbanknr",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "inrichtingsrnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "koepelnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "relatienr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "bedrijfnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "dossiernrvmm",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "bedrijfsgroep",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "lbernr",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "exploitantnr",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "exploitatienr",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "test",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "start",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "stop",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "uitbatersnr",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "uitbatingsnr",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "nh_n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nh_p2o5",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "zeugennormnh",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "mestvarkensnormnh",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "anderevarkensnormnh",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "login",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "paswoord",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "loginbis",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "paswoordbis",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "aangevraagd",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "verwerkingsplichtig",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "best",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "klantnr"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "03 ner",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": false
+      },
+      {
+        "name": "tot",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "landbouwrnr",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "aantal",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "soort",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "datum",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "nverwbedrijf",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nverwspsoort",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "verwpl",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "diersoortrv",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "diersoortv",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "diersoortp",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "diersoorta",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "blok",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "opm",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "verw",
+        "type": "TEXT",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "nverwbedrijfoorspr",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nverwspsoortoorspr",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id",
+      "klantnr"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "03 ner groep",
+    "columns": [
+      {
+        "name": "soort",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "nergr",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "soort"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "03 soort ner",
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "soort",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "nergroep",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "verwperc",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "03 soort verw",
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "soort",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "04 type mestuitscheidingsbalans",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "nr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "05 compensatie ner",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "comp",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "opm",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id",
+      "klantnr",
+      "jaar"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "06 type afzet",
+    "columns": [
+      {
+        "name": "type afzet",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "beschrijving",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "aanofaf",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "type afzet"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "07 luchtwassers",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "diersoort",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "diercat",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "lw",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "reductie",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "min",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "max",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "07 stal types",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "staltype",
+        "type": "TEXT",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "08 convenant",
+    "columns": [
+      {
+        "name": "diercode",
+        "type": "INTEGER",
+        "nullable": false
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": false
+      },
+      {
+        "name": "iddier",
+        "type": "INTEGER",
+        "nullable": false
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "maxp",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "maxre",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "maxverbruik",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "margeverbruik",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "uitschn",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "uitschp",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "diercode",
+      "jaar",
+      "iddier"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "08 dieren coefficienten regressie",
+    "columns": [
+      {
+        "name": "samenvoegcode",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "coef1re",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "coef2re",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "coef1p",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "coef2p",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "verbruik",
+        "type": "INTEGER",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "samenvoegcode",
+      "jaar"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "09 cert",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "volgnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "omschr",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "datum",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "aard",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id",
+      "klantnr",
+      "volgnr"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "10 dieren tussenstand",
+    "columns": [
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "diercode",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "datum",
+        "type": "DATE",
+        "nullable": true
+      },
+      {
+        "name": "aantal",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "maanden",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "aantalomgerek",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "verbruik",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "re",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "p",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "re_nmin",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "re_nmax",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "klantnr",
+      "diercode",
+      "jaar"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "10 dieren verliesnorm",
+    "columns": [
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "10 mestbank dieren stalbezetting_diercode",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "21 verliesnorm_diercode",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "verliesnorm",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "row_id",
+        "type": "SERIAL",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "row_id"
+    ],
+    "syntheticPk": true,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "10 mestbank dieren",
+    "columns": [
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": false
+      },
+      {
+        "name": "jaartal",
+        "type": "INTEGER",
+        "nullable": false
+      },
+      {
+        "name": "diercode",
+        "type": "DOUBLE PRECISION",
+        "nullable": false
+      },
+      {
+        "name": "aantal",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "plaatsen",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "mub",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "lec",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "bruton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "verliesnorm",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "netton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nettop",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "prodn",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "prodp",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "1prodn",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "1prodp",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "1ner",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "2prodn",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "2prodp",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "3prodn",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "3prodp",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "4prodn",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "4prodp",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "totre",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "totp",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "waterverbruik",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "watervmm",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ingave",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "klantnr",
+      "jaartal",
+      "diercode"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "10 mestbank dieren stalbezetting",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "diercode",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "type",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "stalbezet",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "aantal",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "plaatsen",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "staltype",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "best",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "begrazing",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "f12",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f13",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f14",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f15",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f16",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f17",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f18",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f19",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f20",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f21",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f22",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f23",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f24",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f25",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f26",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f27",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f28",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "10 prod spui",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "stal",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "soort",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaartal",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "tellerbegin",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "datumbegin",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "tellereind",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "datumeind",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "hoev",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "nanal",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "panal",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ntot",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ptot",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "gebrcert",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "datumcert",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "10 prod spui balans",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "soort",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "datum",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "aard",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "hoev",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "gehalte",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id",
+      "klantnr"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "10 verlies'",
+    "columns": [
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "10 mestbank dieren stalbezetting_diercode",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "21 verliesnorm_diercode",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "verliesnorm",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "row_id",
+        "type": "SERIAL",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "row_id"
+    ],
+    "syntheticPk": true,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "10 voorw rv",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "derogatie",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "melkq",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "leveringen",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "melkqkg",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "voedergewas",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "gras",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "voorw1",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "voorw2",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id",
+      "klantnr",
+      "jaar"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "102 aantal",
+    "columns": [
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "aantalvanhoev",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "row_id",
+        "type": "SERIAL",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "row_id"
+    ],
+    "syntheticPk": true,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "102 aantal orig",
+    "columns": [
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "aantalvanhoev",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "row_id",
+        "type": "SERIAL",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "row_id"
+    ],
+    "syntheticPk": true,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "11 mestbank gronden",
+    "columns": [
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaartal",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "grondtype",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "oppervlakte",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "dierln",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "chemn",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "totn",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "totp2o5",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "klantnr",
+      "jaartal",
+      "grondtype"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "11 voedergewassen",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "type",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "ha",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "12 mestbank stock voeder",
+    "columns": [
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaartal",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "diercode_stock",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "artnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "stock_voeder",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "p_stock",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "re_stock",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "stock_voedere",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "p_stocke",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "re_stocke",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "stock_voeders",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "p_stocks",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "re_stocks",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "veld1",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "veld2",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "veld3",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "veld4",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "veld5",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "veld6",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "veld7",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "veld8",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "veld9",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "veld10",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "veld11",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "veld12",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "veld13",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "veld14",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "klantnr",
+      "jaartal",
+      "diercode_stock",
+      "artnr"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "121 mestbank stock mest",
+    "columns": [
+      {
+        "name": "stock_id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaartal",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "capaciteit",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "vorm",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "stock",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "p",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "stock_e",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "n_e",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "p_e",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "stock_s",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "n_s",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "p_s",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "f17",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f18",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f19",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f20",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f21",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f22",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f23",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f24",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f25",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f26",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f27",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "f28",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "stock_id",
+      "klantnr"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "16 basisverwpl",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "bedrgr",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "naam",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "prodn",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "landn",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "overschot",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "bedr",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "gem",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "verwtot",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nverwth",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ndefinitief",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "soort",
+        "type": "VARCHAR (80)",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "row_id",
+        "type": "SERIAL",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "row_id"
+    ],
+    "syntheticPk": true,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "16 mvc",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": false
+      },
+      {
+        "name": "lbnr",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "datum",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "mvc",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "soort",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "opm",
+        "type": "VARCHAR (150)",
+        "nullable": true
+      },
+      {
+        "name": "overdrager",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id",
+      "klantnr"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "17 verwpl",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "bedrijfsgroep",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "soort",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "nverw",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "mvcgenoeg",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "mvcverzet",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "afgewerkt",
+        "type": "BOOLEAN",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "2017 diercategorieen",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "diergroep",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code diercategorie",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "diercategorie",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "grazen",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "2017 kunstmest groeimedium",
+    "columns": [
+      {
+        "name": "code",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "meststof",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "2017 meststoffen",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "meststof",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "type",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vorm",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "dichtheid",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg n/ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg p₂o₅/ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "naam",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "2017 nub types",
+    "columns": [
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "nub",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "2017 pas maatregelen",
+    "columns": [
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code diercategorie",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "diergroep",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code staltype",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "diercategorie",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code pas-maatregel",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "staltype",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "pas-maatregel",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "2017 prod methodes",
+    "columns": [
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "productiemethode",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "2017 regios",
+    "columns": [
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "regio",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "2017 san afw redenen",
+    "columns": [
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "reden sanitel afwijking",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "2017 spuistroom",
+    "columns": [
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "spuistroom",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "2017 v staltypes",
+    "columns": [
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "staltype",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "21 diercat dlv",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "diercat",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschr",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "21 dieren",
+    "columns": [
+      {
+        "name": "diercode",
+        "type": "DOUBLE PRECISION",
+        "nullable": false
+      },
+      {
+        "name": "diernaam",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "n_nh",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "p2o5_nh",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "ner",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "n_forf",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "p2o5_forf",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "n_conv",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "p2o5_conv",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "n_lec",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "samenvoegcode",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "codewater",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "diergroep",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "trad",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "aea",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "catdlv",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "verbruik",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "volume",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "diercode"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "21 melkkoeien",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "ondergrens",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "bovengrens",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "q250",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "p2o5",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "n eind",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "21 soort spui",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "21 uitsch lec",
+    "columns": [
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "diercode",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "somvanlec",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "somvanniet lec",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "somvansom",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "n_lec",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "niet-laageiwitvoeder",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "row_id",
+        "type": "SERIAL",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "row_id"
+    ],
+    "syntheticPk": true,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "21 verlies",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "cat",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "verlies",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "21 verliesnorm",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "diercode",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "verlies",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "22 gronden",
+    "columns": [
+      {
+        "name": "grond_id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "soort gebied",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "dierlijken",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "chemischen",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "totalen",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "totalefosfaat",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaartal",
+        "type": "INTEGER",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "grond_id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "23 artikelnr voeders",
+    "columns": [
+      {
+        "name": "voeder_id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "artikelnummer",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "eh",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "re",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "p",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "gebruikt in fr",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "metmais",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "code",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "dosering",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschrijvingfr",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "catmb",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "typevoeder",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "geblokkeerd",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "codee",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "codep",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "tekst",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "voeder_id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "24 voeder per pl tsst",
+    "columns": [
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaartal",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "samenvoegcode",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "expr1",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "expr2",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "expr3",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "p",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "mub",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "verbr",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "row_id",
+        "type": "SERIAL",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "row_id"
+    ],
+    "syntheticPk": true,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "24 voeder per plaats",
+    "columns": [
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaartal",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "samenvoegcode",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "expr1",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "expr2",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "expr3",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "p",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "mub",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "row_id",
+        "type": "SERIAL",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "row_id"
+    ],
+    "syntheticPk": true,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "25 samenstelling mest",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "diersoort",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "mestcode",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "soort",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "omschr mb",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "vorm",
+        "type": "VARCHAR (2)",
+        "nullable": true
+      },
+      {
+        "name": "n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "p2o5",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "dichtheid (ton/m³)",
+        "type": "REAL",
+        "nullable": true
+      },
+      {
+        "name": "codemb",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "werkingscoeff",
+        "type": "INTEGER",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "26 type mest",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "vorm",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "31 diergroepen",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "diergroep",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "33 vmm nieuw",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "putnummer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "installatienummer",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "locatie grondwaterput adres",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "locatie grondwaterput xy-coördinaten",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vergunde diepte",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "watervoerende laag (hydrogeologische hoofdeenheid)",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vergunde hoeveelheid grondwater (m³/dag)",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vergunde hoeveelheid grondwater (m³/jaar)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "exploitant_id_aow",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "vergunning_id_aow",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "installatie_id_aow",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "watnr_aow",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vmm_dossier",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "cbb_xtant",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "cbb_xtie",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nacebel_code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nacebel",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam_exploitant",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "adres_exploitant",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "gemeente_exploitant",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "begin_datum_verg",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "eind_datum_verg",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "van_datum_termijn",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "tot_datum_termijn",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "datum_van",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "datum_tot",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "vergund_debiet_dag",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "vergund_debiet_jr",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "klasse",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vlarem_rubriek_code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "bestemming1",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "bestemming2",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "bestemming3",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "bestemming4",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vergund_aantal_putten",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "vergunde_diepte",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "gemeente_inst",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "postcode_inst",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "adres_inst",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "kadaster",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "inst_x",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "inst_y",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "inst_z",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "aard_winning",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "aard_winning_beschr",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "aquifer_code_inst",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "aquifer_beschr_inst",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "gwlichaam_inst",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "gwsysteem_inst",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "gespannen?",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "heffinggebied",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "put_id_aow",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "put_nummer_aow",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "put_nr_expl",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "x_put",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "y_put",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "z_put",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "onderkant_pompfilter",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "aquifercode_put",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "aquifer_beschr_put",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "gwlichaam_filter",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "gwsysteem_filter",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "40 mv rondes",
+    "columns": [
+      {
+        "name": "ronde",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "silo",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "opzet",
+        "type": "DATE",
+        "nullable": true
+      },
+      {
+        "name": "aantal",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "verkoop",
+        "type": "DATE",
+        "nullable": true
+      },
+      {
+        "name": "opm",
+        "type": "TEXT",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "ronde"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "41 biggen",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "ronde",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "biggen",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "leverancier",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "opm",
+        "type": "TEXT",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "42 beh",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "ronde",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "behandeling",
+        "type": "TEXT",
+        "nullable": true
+      },
+      {
+        "name": "opm",
+        "type": "TEXT",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "50 voorschriften",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "intern nummer",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "datum voorschrift",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "beslagadres code",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "beslagadres",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "dierenarts code",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "dierenarts",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "voorschrift dierenarts",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "soort dieren code",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "soort dieren",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "ouderdom",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "aantal dieren",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "silo",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "medicamentnr 1",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "medicament 1",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "dosage (kg/ton) 1",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "medicamentnr 2",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "medicament 2",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "dosage (kg/ton) 2",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "medicamentnr 3",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "medicament 3",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "dosage (kg/ton) 3",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "medicamentnr 4",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "medicament 4",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "dosage (kg/ton) 4",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "productcode 1",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "product 1",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "hoeveelheid (kg) 1",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ziektenr 1",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ziekte 1",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "ziektenr 2",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ziekte 2",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "ziektenr 3",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "ziekte 3",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "duur behandeling (dagen)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "certus kwaliteitslabel?",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "wachttijd",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "wachttijd eenheid",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "certus diergroep code",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "certus diergroep",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "60 meststoffen",
+    "columns": [
+      {
+        "name": "code",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "type",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "meststof",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vorm",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "dichtheid",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg n/ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg p₂o₅/ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "61 kunstmest op groeimedium",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "meststof",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "62 diercategorieen",
+    "columns": [
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code diercategorie",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "diergroep",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "diercategorie",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "grazen",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "63 nub types",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nub",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "64 pas maatregelen",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "diergroep",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code diercategorie",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "diercategorie",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code staltype",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "staltype",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code pas-maatregel",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "pas-maatregel",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "veld9",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "65 staltype",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "staltype",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "66 productiemethodes",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "productiemethode",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "factuurklanten",
+    "columns": [
+      {
+        "name": "code adres",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "landcode",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving landcode",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "prefix naam",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "adres",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "plaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "postcode",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "btw-nr",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "taalcode",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "fax",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "telefoon",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "email",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "gsm",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "ondernemingsnummer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "url",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code prijslijst",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "geblokkeerd? (j of n)",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "bestelkorting? (j of n)",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "soort facturatie",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code betaalvoorwaarde",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "domiciliëring? (j of n)",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving betaalvoorwaarde",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "btw-regime",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "mandaatreferte",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "vertegenwoordiger",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "BOOLEAN",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Handel & facturatie"
+  },
+  {
+    "name": "g attest mestbank",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "diercode",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "hoev",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "tot_re",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "tot_p",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "soort",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "best",
+        "type": "BOOLEAN",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "h attest mestbank lec",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "diercode",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "subcat",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "leverancier",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "hoev",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "tot_re",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "tot_p",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "soort",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "periode",
+        "type": "INTEGER",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "leveranciers",
+    "columns": [
+      {
+        "name": "code adres",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "landcode",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving landcode",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "prefix naam",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "adres",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "plaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "postcode",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "btw-nr",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "taalcode",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "fax",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "telefoon",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "email",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "gsm",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "ondernemingsnummer",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "url",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "betaalwijze",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "geblokkeerd? (j of n)",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code betaalvoorwaarde",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "mandaatreferte",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "munt",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving betaalvoorwaarde",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "btw-regime",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "type graanafrekening",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code ontvangstnorm",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving ontvangstnorm",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "test",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "adres2",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "granen",
+        "type": "BOOLEAN",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Handel & facturatie"
+  },
+  {
+    "name": "leverplaatsen",
+    "columns": [
+      {
+        "name": "code adres",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "landcode",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving landcode",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "prefix naam",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "adres",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "plaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "postcode",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "btw-nr",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "taalcode",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "fax",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "telefoon",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "email",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "gsm",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "ondernemingsnummer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "url",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "beslagnummer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code gekoppelde factuurklant",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "geblokkeerd? (j of n)",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "mestbanknummer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "datum 1ste levering",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "jaar1stelev",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "vertegenwoordiger",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "mandaatreferentie",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "test",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "adres2",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Handel & facturatie"
+  },
+  {
+    "name": "lijst kl enkel 24",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "naam",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "21",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "24",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "mestbankgegevens pl proplume",
+    "columns": [
+      {
+        "name": "diercode",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "artnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "leverdatum",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "hoev",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "p",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "re",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "tot_p",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "tot_re",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "coppens",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "proplume",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank transport"
+  },
+  {
+    "name": "n1 verliesnorm",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "diercode",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "uitleg",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "tra",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ea",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "n4 ndruk gem",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "idgem",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "gemeente",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "ndruk",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "producten",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving nederlands",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving frans",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code producthoofdgroep",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "code productgroep verkoop",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving producthoofdgroep",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "prijseenheid (vb: per 1000 kg)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving productgroep verkoop",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code eenheid",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving code eenheid",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "goederencode",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code productgroep aankoop",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "code statistische hoeveelheid",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving code statistische hoeveelheid",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "gekoppeld recept",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving productgroep aankoop",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "oorsprong (aankoop of productie)",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code producent",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving code producent",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "diersoort sanitel",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving diersoort sanitel",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "categorie mestbank",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving categorie mestbank",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "subcategorie mestbank",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving subcategorie mestbank",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "voedertype",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "geblokkeerd? (j of n)",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code 1 -statistiekgroep",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving 1 -statistiekgroep",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code 2 -statistiekgroep",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving 2 -statistiekgroep",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code productvorm",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving productvorm",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "etiketbenaming nederlands",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "etiketbenaming frans",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "etiketbenaming ggo nederlands",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "etiketbenaming ggo frans",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code bemefa",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "als voedermiddel op etiket? (j of n)",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving bemefa",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "prodcomcode",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "ccm in formule? (j of n)",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "% ccm",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "basisformule",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "eiwit (%)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "eiwit (datum)",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "eiwit (aanduiding laag eiwit convenant, le)",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "fosfor (%)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "fosfor (datum)",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "fosfor (aanduiding laag fosfor, lp)",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code 3 -statistiekgroep",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving 3 -statistiekgroep",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code 4 -statistiekgroep",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving 4 -statistiekgroep",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "facturatie groep nummer",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "facturatie groep omschrijving",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "BOOLEAN",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Handel & facturatie"
+  },
+  {
+    "name": "switchboard items",
+    "columns": [
+      {
+        "name": "switchboardid",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "itemnumber",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "itemtext",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "command",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "argument",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "switchboardid",
+      "itemnumber"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "tr br aanvoer",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "nr burenregeling",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "begin",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "einde",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "vorm",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "mest",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg p₂o₅/ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg n/ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg p₂o₅",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "naam aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater/exploitant aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating/exploitatie aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "losplaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater/exploitant afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating/exploitatie afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank transport"
+  },
+  {
+    "name": "tr br afvoer",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "nr burenregeling",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "begin",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "einde",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "vorm",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "mest",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg p₂o₅/ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg n/ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg p₂o₅",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "naam aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater/exploitant aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating/exploitatie aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "losplaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater/exploitant afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating/exploitatie afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank transport"
+  },
+  {
+    "name": "tr brm aanvoer",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "nr burenregeling",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "naam aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater/exploitant aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating/exploitatie aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "losplaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater/exploitant afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating/exploitatie afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "meststof",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "datum vervoer",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "voorgemelde hoeveelheid (ton)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "vrachten",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "voorgemelde n (kg/ton)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "voorgemelde p₂o₅ (kg/ton)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "voorgemelde n (kg)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "voorgemelde p₂o₅ (kg)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nagemelde hoeveelheid (ton)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nagemeld aantal vrachten",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nagemelde n (kg)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nagemelde n (kg/ton)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nagemelde p₂o₅ (kg/ton)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "geannuleerd",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "nagemelde p₂o₅ (kg)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "statustext",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "ts voormelding",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "ts namelding",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank transport"
+  },
+  {
+    "name": "tr ic aanvoer",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "document",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "naam inschaarder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer inschaarder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr exploitant inschaarder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr exploitatie inschaarder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam houder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer houder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr exploitant houder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr exploitatie houder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "diersoort",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "aantal",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "begin",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "einde",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "kg p₂o₅",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank transport"
+  },
+  {
+    "name": "tr ic afvoer",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "document",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "naam inschaarder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer inschaarder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr exploitant inschaarder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr exploitatie inschaarder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam houder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer houder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr exploitant houder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr exploitatie houder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "diersoort",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "aantal",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "begin",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "einde",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "kg p₂o₅",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank transport"
+  },
+  {
+    "name": "tr mad aanvoer",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "document",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "datum",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "gereden",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "type",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "mest",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vorm",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "kg p₂o₅/ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg n/ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "vrachten",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ton/vracht",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg p₂o₅",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "hoedanigheid aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "laadplaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater/exploitant aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating/exploitatie aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "hoedanigheid afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "losplaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater/exploitant afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating/exploitatie afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam voerder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating voerder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "document vervolg",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nummerplaat",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "overnachtplaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "datum vervolg",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank transport"
+  },
+  {
+    "name": "tr mad afvoer",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "document",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "datum",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "gereden",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "type",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "mest",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vorm",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "kg p₂o₅/ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg n/ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "vrachten",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ton/vracht",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg p₂o₅",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "hoedanigheid aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "laadplaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater/exploitant aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating/exploitatie aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "hoedanigheid afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "losplaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater/exploitant afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating/exploitatie afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam voerder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating voerder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "document vervolg",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nummerplaat",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "overnachtplaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "datum vervolg",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank transport"
+  },
+  {
+    "name": "tr over aanvoer",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "document",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "datum",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "gereden",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "type",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "mest",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vorm",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "kg p₂o₅/ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg n/ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "vrachten",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ton/vracht",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg p₂o₅",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "hoedanigheid aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "laadplaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater/exploitant aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating/exploitatie aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "hoedanigheid afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "losplaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater/exploitant afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating/exploitatie afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam voerder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating voerder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "document vervolg",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nummerplaat",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "overnachtplaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "datum vervolg",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank transport"
+  },
+  {
+    "name": "tr over afvoer",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "document",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "datum",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "gereden",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "type",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "mest",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vorm",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "kg p₂o₅/ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg n/ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "vrachten",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ton/vracht",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ton",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg p₂o₅",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "kg n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "hoedanigheid aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "laadplaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater/exploitant aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating/exploitatie aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "hoedanigheid afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "losplaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater/exploitant afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating/exploitatie afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam voerder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating voerder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "document vervolg",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nummerplaat",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "overnachtplaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "datum vervolg",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank transport"
+  },
+  {
+    "name": "zab_med_varkensmeel",
+    "columns": [
+      {
+        "name": "beslagadres code",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "datum voorschrift",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "beslagadres",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "dierenarts",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "dierenarts code",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "medicament 1",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "voorschrift dierenarts",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "medicament 2",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "medicament 3",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "duur behandeling (dagen)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "medicament 4",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "certus diergroep code",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "certus kwaliteitslabel?",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "certus diergroep",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "productcode 1",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "01 gem periode",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "ndruk",
+        "type": "INTEGER",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "03 erk transporteurs",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "transportnr",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "03 soort mvc",
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "soort",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "090 eenheden",
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "eenheid",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "10 melkvee",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "trapjaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "diercode",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "aantaltrap",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "melkq",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "leveringen",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "melkkg",
+        "type": "NUMERIC (28, 2)",
+        "nullable": true
+      },
+      {
+        "name": "melkgifte",
+        "type": "NUMERIC (28, 2)",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "aantal",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "derogatie",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "voorw1",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "voorw2",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "p2o5",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "n eind",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "somvanvg",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "somvgg",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nvoorw1",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "pvoorw1",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nvoorw2",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "pvoorw2",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "pmax",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nmax",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "pprod",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nprod",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "row_id",
+        "type": "SERIAL",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "row_id"
+    ],
+    "syntheticPk": true,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "15 afzet mest",
+    "columns": [
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": false
+      },
+      {
+        "name": "jaartal",
+        "type": "INTEGER",
+        "nullable": false
+      },
+      {
+        "name": "type afzet",
+        "type": "INTEGER",
+        "nullable": false
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "hoev",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "n",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "p2o5",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "werkzamen",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "ingave",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "bestaat",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "klantnr",
+      "jaartal",
+      "type afzet"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "2017 pl staltypes",
+    "columns": [
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "staltype",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "2017 teelten",
+    "columns": [
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "teelt",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "21 soort afzet spui",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "22 voedergewassen",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "omrekeningha",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "27 convenant",
+    "columns": [
+      {
+        "name": "diercode",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "iddier",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "maxp",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "maxre",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "row_id",
+        "type": "SERIAL",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "row_id"
+    ],
+    "syntheticPk": true,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "30 water",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "watercode",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "verbruik",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "vmm",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "33",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "putnummer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "installatienummer",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "locatie grondwaterput adres",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "locatie grondwaterput xy-coördinaten",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vergunde diepte",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "watervoerende laag (hydrogeologische hoofdeenheid)",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vergunde hoeveelheid grondwater (m³/dag)",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vergunde hoeveelheid grondwater (m³/jaar)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "exploitant_id_aow",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "vergunning_id_aow",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "installatie_id_aow",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "watnr_aow",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vmm_dossier",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "cbb_xtant",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "cbb_xtie",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nacebel_code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nacebel",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam_exploitant",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "adres_exploitant",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "gemeente_exploitant",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "begin_datum_verg",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "eind_datum_verg",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "van_datum_termijn",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "tot_datum_termijn",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "datum_van",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "datum_tot",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "vergund_debiet_dag",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "vergund_debiet_jr",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "klasse",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vlarem_rubriek_code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "bestemming1",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "bestemming2",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "bestemming3",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "bestemming4",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "vergund_aantal_putten",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "vergunde_diepte",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "gemeente_inst",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "postcode_inst",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "adres_inst",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "kadaster",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "inst_x",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "inst_y",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "inst_z",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "aard_winning",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "aard_winning_beschr",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "aquifer_code_inst",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "aquifer_beschr_inst",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "gwlichaam_inst",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "gwsysteem_inst",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "gespannen?",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "heffinggebied",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "put_id_aow",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "put_nummer_aow",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "put_nr_expl",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "x_put",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "y_put",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "z_put",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "onderkant_pompfilter",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "aquifercode_put",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "aquifer_beschr_put",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "gwlichaam_filter",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "gwsysteem_filter",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "43 cert",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "certificering",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "aanvraag",
+        "type": "DATE",
+        "nullable": true
+      },
+      {
+        "name": "toekenning",
+        "type": "DATE",
+        "nullable": true
+      },
+      {
+        "name": "tot",
+        "type": "DATE",
+        "nullable": true
+      },
+      {
+        "name": "certificaat",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "68 spuistroom",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "spuistroom",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "jaar",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "mestbankgegevens",
+    "columns": [
+      {
+        "name": "diercode",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "klantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "artnr",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "leverdatum",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "hoev",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "p",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "re",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "tot_p",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "tot_re",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "gemed",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "voorschrift",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "proplume",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "coppens",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank transport"
+  },
+  {
+    "name": "n2 dieren map3",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "diersoort",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "omschrijving",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "ondergrens",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "bovengrens",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "p2o5",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "n (2007)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "n (2008)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "n (2009)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "n (2010)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "tr brm afvoer",
+    "columns": [
+      {
+        "name": "id",
+        "type": "SERIAL",
+        "nullable": true
+      },
+      {
+        "name": "nr burenregeling",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "naam aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "naam afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater/exploitant aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating/exploitatie aanbieder",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr landbouwer afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "losplaats",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbater/exploitant afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "nr uitbating/exploitatie afnemer",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "meststof",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "datum vervoer",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "voorgemelde hoeveelheid (ton)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "vrachten",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "voorgemelde n (kg/ton)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "voorgemelde p₂o₅ (kg/ton)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "voorgemelde n (kg)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "voorgemelde p₂o₅ (kg)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nagemelde hoeveelheid (ton)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nagemeld aantal vrachten",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nagemelde n (kg)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nagemelde n (kg/ton)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "nagemelde p₂o₅ (kg/ton)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "geannuleerd",
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      {
+        "name": "nagemelde p₂o₅ (kg)",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "statustext",
+        "type": "VARCHAR (255)",
+        "nullable": true
+      },
+      {
+        "name": "ts voormelding",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      {
+        "name": "ts namelding",
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "syntheticPk": false,
+    "categorie": "Mestbank transport"
+  },
+  {
+    "name": "15",
+    "columns": [
+      {
+        "name": "bedrijfsgroep",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "somvann",
+        "type": "DOUBLE PRECISION",
+        "nullable": true
+      },
+      {
+        "name": "jaartal",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "row_id",
+        "type": "SERIAL",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "row_id"
+    ],
+    "syntheticPk": true,
+    "categorie": "Mestbank & voeder"
+  },
+  {
+    "name": "1",
+    "columns": [
+      {
+        "name": "eerstevanklantnr",
+        "type": "INTEGER",
+        "nullable": true
+      },
+      {
+        "name": "bedrijfsgroep",
+        "type": "VARCHAR (50)",
+        "nullable": true
+      },
+      {
+        "name": "row_id",
+        "type": "SERIAL",
+        "nullable": false
+      }
+    ],
+    "primaryKey": [
+      "row_id"
+    ],
+    "syntheticPk": true,
+    "categorie": "Mestbank & voeder"
+  }
+]

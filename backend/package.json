@@ -1,0 +1,19 @@
+{
+  "name": "boerderij-beheer-backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "schema": "node run-schema.js",
+    "migrate": "node migrate-data.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.0",
+    "pg": "^8.23.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.6.1",
+    "pg-copy-streams": "^6.0.6"
+  }
+}
