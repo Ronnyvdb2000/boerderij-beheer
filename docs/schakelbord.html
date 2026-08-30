@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Voeders Degrave</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { margin: 0; background: #f0f0f0; font-family: Georgia, 'Times New Roman', serif; }
+
+    .schakelbord-header {
+      background: #0000EE;
+      color: #1a1a4d;
+      padding: 30px 40px 60px 40px;
+      position: relative;
+    }
+    .schakelbord-header h1 {
+      font-size: 42px;
+      font-weight: bold;
+      margin: 0;
+      color: #16163e;
+      text-shadow: 1px 1px 0 rgba(255,255,255,0.15);
+    }
+
+    .schakelbord-body {
+      background: #eeeeee;
+      margin: -35px 40px 40px 60px;
+      padding: 40px 30px;
+      min-height: 300px;
+      box-shadow: -6px 0 0 #0000EE;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 0;
+      font-size: 17px;
+      color: #000;
+      text-decoration: none;
+      max-width: 460px;
+    }
+    .menu-item:hover { text-decoration: underline; }
+
+    .menu-vinkje {
+      width: 22px;
+      height: 22px;
+      border: 1px solid #888;
+      background: linear-gradient(to bottom, #fdfdfd, #d8d8d8);
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="schakelbord-header">
+    <h1>Voeders Degrave</h1>
+  </div>
+
+  <div class="schakelbord-body">
+    <a href="menu-algemene-gegevens.html" class="menu-item">
+      <span class="menu-vinkje"></span> Algemene gegevens
+    </a>
+    <a href="menu-mestbankgegevens.html" class="menu-item">
+      <span class="menu-vinkje"></span> Mestbankgegevens
+    </a>
+    <a href="menu-regressie.html" class="menu-item">
+      <span class="menu-vinkje"></span> Mestbank berekening regressie (tussenstand)
+    </a>
+    <a href="menu-voederlijst.html" class="menu-item">
+      <span class="menu-vinkje"></span> Maandelijkse voederlijst
+    </a>
+  </div>
+</body>
+</html>
