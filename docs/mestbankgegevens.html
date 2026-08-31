@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Mestbankaangifte dieren</title>
+  <style>
+    body { margin: 0; font-family: Tahoma, Arial, sans-serif; font-size: 11px; background: #d4d0c8; }
+    .scherm { display: flex; height: 100vh; }
+
+    /* --- Linkerkolom: klantenlijst + actieknoppen (zoals in Access) --- */
+    .klantenlijst-kolom { width: 210px; background: white; border-right: 2px solid #888; display: flex; flex-direction: column; }
+    .klantenlijst-zoek { padding: 6px; border-bottom: 1px solid #ccc; }
+    .klantenlijst-zoek input { width: 100%; box-sizing: border-box; padding: 4px; font-size: 11px; }
+    .klantenlijst { flex: 1; overflow-y: auto; min-height: 120px; }
+    .klant-item { display: flex; padding: 3px 6px; cursor: pointer; border-bottom: 1px solid #eee; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 11px; }
+    .klant-item .nr { width: 50px; color: #444; flex-shrink: 0; }
+    .klant-item:hover { background: #eef4ff; }
+    .klant-item.actief { background: #cfe2ff; font-weight: bold; }
+
+    .actieknoppen { border-top: 2px solid #888; padding: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; background: #ece9d8; }
+    .actieknoppen button { font-size: 11px; padding: 8px 4px; background: linear-gradient(to bottom, #fdfdfd, #dcdcdc); border: 1px solid #888; box-shadow: 1px 1px 2px rgba(0,0,0,0.2); cursor: pointer; line-height: 1.2; }
+    .actieknoppen button:hover { background: #eef4ff; }
+    .actieknoppen .terug-rij { grid-column: 1 / -1; display: flex; justify-content: flex-end; }
+    .actieknoppen .terug-rij a { text-decoration: none; font-size: 18px; }
+
+    /* --- Rechterkolom: het formulier zelf, 2-koloms zoals Access --- */
+    .detail-kolom { flex: 1; overflow-y: auto; padding: 10px 14px; }
+    .detail-kolom h1 { font-size: 15px; margin: 0 0 8px 0; border-bottom: 1px solid #999; padding-bottom: 4px; }
+
+    .formgrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "identificatie ner"
+        "dieren stalbezetting"
+        "stockvoeder melk"
+        "voeders voeders";
+      gap: 10px;
+      align-items: start;
+    }
+    .area-identificatie { grid-area: identificatie; }
+    .area-ner { grid-area: ner; }
+    .area-dieren { grid-area: dieren; }
+    .area-stalbezetting { grid-area: stalbezetting; }
+    .area-stockvoeder { grid-area: stockvoeder; }
+    .area-melk { grid-area: melk; }
+    .area-voeders { grid-area: voeders; }
+
+    .sectie { background: white; border: 1px solid #999; }
+    .sectie-titel { background: #003399; color: white; padding: 3px 8px; font-weight: bold; font-size: 11px; }
+    .sectie-titel.waarschuwing { background: #b00020; }
+    .sectie-inhoud { padding: 6px; overflow-x: auto; }
+
+    .veldrij { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; flex-wrap: wrap; }
+    .veldrij label { font-size: 11px; color: #333; min-width: 100px; }
+    .veldrij input, .veldrij select { padding: 2px; border: 1px solid #888; font-size: 11px; }
+
+    table.grid { border-collapse: collapse; width: 100%; font-size: 10.5px; }
+    table.grid th { background: #e8e8e8; border: 1px solid #bbb; padding: 3px; text-align: left; white-space: nowrap; }
+    table.grid td { border: 1px solid #ddd; padding: 2px; white-space: nowrap; }
+    table.grid input, table.grid select { width: 100%; box-sizing: border-box; border: none; font-size: 10.5px; padding: 1px; }
+    table.grid .actie-cel { white-space: nowrap; }
+    table.grid .actie-cel button { font-size: 10px; padding: 1px 5px; }
+
+    a.terug-icoon { text-decoration: none; font-size: 18px; }
+
+    @media (max-width: 900px) {
+      .formgrid { grid-template-columns: 1fr; grid-template-areas: "identificatie" "ner" "dieren" "stalbezetting" "stockvoeder" "melk" "voeders"; }
+    }
+  </style>
+</head>
+<body>
+  <div class="scherm">
+    <div class="klantenlijst-kolom">
+      <div class="klantenlijst-zoek"><input type="text" id="zoekklant" placeholder="Zoeken op naam of nr..."></div>
+      <div class="klantenlijst" id="klantenlijst"></div>
+
+      <div class="actieknoppen">
+        <button id="btn-overzicht-voeders" title="Nog niet actief">Overzicht geleverde voeders</button>
+        <button id="btn-overzicht-proplume" title="Nog niet actief">Overzicht voeders Proplume</button>
+        <button id="btn-export-excel" title="Nog niet actief">Voeders exporteren Excel</button>
+        <button id="btn-tr-inlezen" title="Nog niet actief">tr inlezen</button>
+        <button id="btn-controle-stalbezetting" title="Nog niet actief">controle stalbezetting</button>
+        <button id="btn-resultaat-berekeningen" title="Nog niet actief">Resultaat berekeningen</button>
+        <div class="terug-rij"><a href="schakelbord.html" class="terug-icoon" title="Terug naar hoofdmenu">🚪</a></div>
+      </div>
+    </div>
+
+    <div class="detail-kolom">
+      <h1 id="titel">Mestbankaangifte dieren</h1>
+
+      <div class="formgrid">
+        <div class="sectie area-identificatie">
+          <div class="sectie-titel">Identificatie</div>
+          <div class="sectie-inhoud" id="sectie-identificatie"></div>
+        </div>
+
+        <div class="sectie area-ner">
+          <div class="sectie-titel">NER</div>
+          <div class="sectie-inhoud" id="sectie-ner"></div>
+        </div>
+
+        <div class="sectie area-dieren">
+          <div class="sectie-titel" id="dieren-titel">Dieren ingeven</div>
+          <div class="sectie-inhoud" id="sectie-dieren"></div>
+        </div>
+
+        <div class="sectie area-stalbezetting">
+          <div class="sectie-titel">Stalbezetting</div>
+          <div class="sectie-inhoud" id="sectie-stalbezetting"></div>
+        </div>
+
+        <div class="sectie area-stockvoeder">
+          <div class="sectie-titel">Stock voeder</div>
+          <div class="sectie-inhoud" id="sectie-stockvoeder"></div>
+        </div>
+
+        <div class="sectie area-melk">
+          <div class="sectie-titel" id="rv-titel">Melk</div>
+          <div class="sectie-inhoud" id="sectie-rv"></div>
+        </div>
+
+        <div class="sectie area-voeders">
+          <div class="sectie-titel">Voeders (vermeld op laag fosfor attesten)</div>
+          <div class="sectie-inhoud" id="sectie-anderevoeders"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/mestbankgegevens.js"></script>
+  <script>
+    // Deze knoppen komen overeen met Access-macro's (8 tr inlezen, controle stalbezetting,
+    // resultaatberekeningen, ...) die nog niet zijn omgezet naar de webapp. Ze staan hier
+    // al op de juiste plaats zoals in het origineel, maar doen voorlopig nog niets.
+    ['btn-overzicht-voeders', 'btn-overzicht-proplume', 'btn-export-excel', 'btn-tr-inlezen', 'btn-controle-stalbezetting', 'btn-resultaat-berekeningen'].forEach(id => {
+      document.getElementById(id).addEventListener('click', () => {
+        alert('Deze functie is nog niet gebouwd in de webapp. Laat het weten als je wil dat ik deze uitwerk.');
+      });
+    });
+  </script>
+</body>
+</html>
