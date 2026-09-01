@@ -427,3 +427,102 @@ app.get('/api/mestbank/:klantnr', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
+// ----------------------------------------------------------------------------
+// Knop "controle stalbezetting" (Access: Knop112_Click op "011 Mestbankaangifte
+// dieren"). In Access gebeurt hier:
+//   1. Macro "2 berek melkvee" -> 4 queries na elkaar:
+//        a) "1303 best wissen"           - DELETE FROM [10 melkvee] WHERE trapjaar = Year(Now())-2
+//        b) "1304 berek N melkk"         - herberekent N/P per melkkoe. Zelf weer
+//           opgebouwd uit de Access-query's "1300 som melkq" -> "1302 melk trap"
+//           -> "1302 melk voorw", hieronder alle drie letterlijk vertaald.
+//        c) "034 tot bijw"               - vult "03 ner".tot en landbouwrnr aan
+//           vanuit "00 adresessen" / "03 mestbank gegevens nutrientenhalte"
+//           (WHERE tot Is Null Or tot = 0).
+//        d) "035 best blanco NER wissen" - DELETE FROM [03 NER] WHERE aantal = 0 Or aantal Is Null
+//   2. Opent in Access een apart formulier "011 Mestbankaangifte stalbezet" en
+//      sluit het huidige. Dat aparte scherm bouwen we niet na - de webapp
+//      ververst in plaats daarvan gewoon de Stalbezetting/NER/Melk-secties
+//      van deze pagina.
+//
+// LET OP - BEWUSTE AFWIJKING VAN ACCESS: in Access hebben alle 4 queries hierboven
+// GEEN klantnr-filter, dus "controle stalbezetting" herberekent daar in één klik
+// de volledige database (alle klanten). In overleg met de gebruiker is dat hier
+// bewust beperkt tot de klant die op dat moment open staat (klantnr = $1) - sneller
+// en veiliger, maar dus geen 1-op-1 kopie van het Access-gedrag.
+// ----------------------------------------------------------------------------
+app.post('/api/mestbank/:klantnr/controle-stalbezetting', async (req, res) => {
+  const klantnr = Number(req.params.klantnr);
+  const jaarMin1 = new Date().getFullYear() - 1; // Access: Year(Now())-1
+  const jaarMin2 = new Date().getFullYear() - 2; // Access: Year(Now())-2
+
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+
+    // a) "1303 best wissen" (origineel: WHERE trapjaar = Year(Now())-2, hier + klantnr)
+    await client.query(`DELETE FROM "10 melkvee" WHERE klantnr = $1 AND trapjaar = $2`, [klantnr, jaarMin2]);
+
+    // b) "1304 berek N melkk" (incl. "1300 som melkq" en "1302 melk trap"/"melk voorw" als CTE's)
+    await client.query(
+      `WITH som_melkq AS (
+         SELECT d.klantnr, d.jaartal, d.diercode, d.aantal,
+                rv.melkq, rv.leveringen, $2::int AS jaar, rv.derogatie
+         FROM "10 mestbank dieren" d
+         JOIN "10 voorw rv" rv ON rv.jaar = d.jaartal AND rv.klantnr = d.klantnr
+         WHERE d.jaartal = $3 AND d.diercode = 13 AND d.klantnr = $1
+       ),
+       melk_trap AS (
+         SELECT d.klantnr, sm.jaartal, d.diercode, sm.aantal, sm.melkq, sm.leveringen,
+                (sm.leveringen + sm.melkq) * 1.03 AS melkkg,
+                (sm.leveringen + sm.melkq) * 1.03 / NULLIF(sm.aantal, 0) AS melkgifte,
+                LEAST(GREATEST(FLOOR(((sm.leveringen + sm.melkq) * 1.03 / NULLIF(sm.aantal, 0)) / 250), 15), 40) AS melkq250,
+                sm.jaar, sm.derogatie
+         FROM "10 mestbank dieren" d
+         JOIN som_melkq sm ON d.jaartal = sm.jaartal AND d.klantnr = sm.klantnr
+         WHERE sm.jaartal = $3 AND d.diercode = 13
+       ),
+       melk_voorw AS (
+         SELECT d.klantnr, mt.jaartal, d.diercode, mt.aantal AS trap_aantal,
+                mt.melkq, mt.leveringen, mt.melkkg, mt.melkgifte, mt.derogatie,
+                d.jaartal AS dieren_jaartal, d.aantal AS dieren_aantal,
+                mk.p2o5, mk.n, mk."n eind"
+         FROM "10 mestbank dieren" d
+         JOIN melk_trap mt ON d.jaartal = mt.jaartal AND d.klantnr = mt.klantnr
+         JOIN "21 melkkoeien" mk ON mt.melkq250 = mk.q250 AND d.jaartal = mk.jaar
+         WHERE d.diercode = 13 AND mt.aantal IS NOT NULL AND d.jaartal = $2
+       )
+       INSERT INTO "10 melkvee"
+         (klantnr, diercode, aantaltrap, trapjaar, melkq, leveringen, melkkg, melkgifte, jaar, aantal, derogatie, p2o5, n, "n eind")
+       SELECT klantnr, diercode, trap_aantal, jaartal, melkq, leveringen, melkkg, melkgifte, dieren_jaartal, dieren_aantal, derogatie, p2o5, n, "n eind"
+       FROM melk_voorw
+       WHERE dieren_aantal IS NOT NULL`,
+      [klantnr, jaarMin1, jaarMin2]
+    );
+
+    // c) "034 tot bijw" (origineel: WHERE tot Is Null Or tot = 0, hier + klantnr)
+    await client.query(
+      `UPDATE "03 ner" n
+       SET tot = a.tot, landbouwrnr = mg.lbernr
+       FROM "00 adresessen" a, "03 mestbank gegevens nutrientenhalte" mg
+       WHERE n.klantnr = a.klantnr AND n.klantnr = mg.klantnr
+         AND (n.tot IS NULL OR n.tot = 0) AND n.klantnr = $1`,
+      [klantnr]
+    );
+
+    // d) "035 best blanco NER wissen" (origineel: WHERE aantal = 0 Or aantal Is Null, hier + klantnr)
+    await client.query(
+      `DELETE FROM "03 ner" WHERE klantnr = $1 AND (aantal = 0 OR aantal IS NULL)`,
+      [klantnr]
+    );
+
+    await client.query('COMMIT');
+    res.json({ ok: true });
+  } catch (err) {
+    await client.query('ROLLBACK');
+    console.error('FOUT bij controle stalbezetting:', err);
+    res.status(500).json({ error: err.message });
+  } finally {
+    client.release();
+  }
+});
